@@ -22,7 +22,10 @@ df_spark = (df_spark
 
 
 #alterando datatype 
-# 1) exibindo tipo de dados armazenados no dataframe
+
+#exibindo tipo de dados armazenados no dataframe
+df_spark.printSchema
+
 # no exemplo abaixo temos 2 colunas: order_date e ship_date, elas estão no formato "string" dd/mm/yyyy e precisamos converter
 # para yyyy-mm-dd para armazenar no banco de dados
 
@@ -33,7 +36,7 @@ df_spark = (df_spark
 )
 
 
-#substituindo valores em uma coluna com regexp_replace
+#substituindo (replace) valores em uma coluna com regexp_replace
 df_spark = (df_spark
                     .withColumn("coluna_x", regexp_replace("coluna_x", ",", ".") #troca "," por "." na coluna inteira
                     .withColumn("coluna_x", regexp_replace("coluna_x", "A", "B") #troca todos os caracteres "A" por "B" na coluna inteira
