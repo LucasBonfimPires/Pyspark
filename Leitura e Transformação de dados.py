@@ -15,8 +15,8 @@ display(df_spark)
 
 #para renomear uma ou mais colunas, faça o seguinte
 df_spark = (df_spark
-            .withColumnRenamed("nome_antigo", "nome_novo")
-            .withColumnRenamed("nome_antigo", "nome_novo")
+                       .withColumnRenamed("nome_antigo", "nome_novo")
+                       .withColumnRenamed("nome_antigo", "nome_novo")
             )
 
 
@@ -31,7 +31,7 @@ df_spark.printSchema
 
 df_spark = (df_spark
                    .withColumn("order_date",    to_date("order_date", "dd/MM/yyyy"))
-                   .withColumn("ship_date",     to_date("ship_date", "dd/MM/yyyy"
+                   .withColumn("ship_date",     to_date("ship_date", "dd/MM/yyyy"))
 
 )
 
@@ -39,6 +39,6 @@ df_spark = (df_spark
 #substituindo (replace) valores em uma coluna com regexp_replace
 df_spark = (df_spark
                     .withColumn("coluna_x", regexp_replace("coluna_x", ",", ".") #troca "," por "." na coluna inteira
-                    .withColumn("coluna_x", regexp_replace("coluna_x", "A", "B") #troca todos os caracteres "A" por "B" na coluna inteira
+                    .withColumn("coluna_y", regexp_replace("coluna_y", "A", "B") #troca todos os caracteres "A" por "B" na coluna inteira
 )
 
