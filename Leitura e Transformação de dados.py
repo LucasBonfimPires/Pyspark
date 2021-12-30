@@ -4,7 +4,7 @@ from pyspark.sql.functions import *
 path = "c://exemplo/exemplo.csv"
 
 
-#criando data frame para leitura, com cabeçalho ativiado e delimitador ";"
+#criando data frame para leitura, com cabeçalho ativado e delimitador ";"
 df_spark = (spark.read.format("csv")
            .option("header", "true")
            .option("delimiter", ";")
